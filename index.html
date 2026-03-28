@@ -10,6 +10,7 @@
 
   <style>
     *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
     body{
       margin:0;
       padding:0;
@@ -18,19 +19,33 @@
       -webkit-font-smoothing:antialiased;
       -moz-osx-font-smoothing:grayscale;
       font-family:Helvetica,Arial,sans-serif;
-      color:rgba(0,0,0,.75);
-      line-height:1.5;
+      color:rgba(0,0,0,.78);
+      line-height:1.55;
     }
-    .page-container{overflow-x:hidden}
-    a,button{transition:background .3s ease-in-out;outline:none!important}
-    a:hover{text-decoration:none;cursor:pointer}
 
-    h1,h2,h3,h4,h5,h6,p,label,.btn,a{font-family:Helvetica,Arial,sans-serif}
-    h1,h2,h3,h4,h5,h6{margin-top:0;color:#111}
-    h1{font-size:2rem}
+    .page-container{overflow-x:hidden}
+
+    a{
+      color:inherit;
+      text-decoration:none;
+    }
+
+    a:hover{text-decoration:none}
+
+    h1,h2,h3,h4,h5,h6,p,label,a{
+      font-family:Helvetica,Arial,sans-serif;
+    }
+
+    h1,h2,h3,h4,h5,h6{
+      margin:0 0 16px 0;
+      color:#111;
+      line-height:1.2;
+    }
+
+    h1{font-size:2.2rem}
     h3{font-size:1.4rem}
     h4{font-size:1.1rem}
-    p{margin-top:0}
+    p{margin:0 0 12px 0}
 
     .container{
       width:100%;
@@ -54,20 +69,26 @@
       padding-right:15px;
     }
 
-    .col-12,.col{flex:0 0 100%;max-width:100%}
-    .col-lg-3,.col-lg-5,.col-lg-6,.col-md-5,.col-md-6,.col-md-7,.col-sm-8{flex:0 0 100%;max-width:100%}
+    .col,.col-12,
+    .col-sm-8,
+    .col-md-5,.col-md-6,.col-md-7,
+    .col-lg-3,.col-lg-5,.col-lg-6{
+      flex:0 0 100%;
+      max-width:100%;
+    }
 
     .bloc{
       width:100%;
       clear:both;
       background:50% 50% no-repeat;
-      padding:0 50px;
       background-size:cover;
       position:relative;
       display:flex;
+      padding:0 32px;
     }
-    .bloc .container{padding-left:15px;padding-right:15px}
-    .bloc-lg{padding:100px 50px}
+
+    .bloc-lg{padding:72px 32px}
+
     .bloc-fill-screen{
       min-height:100vh;
       display:flex;
@@ -75,68 +96,94 @@
       padding-top:20px;
       padding-bottom:20px;
     }
+
     .bloc-fill-screen > .container{
       flex-grow:1;
       display:flex;
       align-items:center;
     }
+
     .fill-bloc-top-edge,
     .fill-bloc-bottom-edge{
       flex-grow:0!important;
       display:block!important;
     }
 
-    .bloc-group{display:flex}
-    .bloc-tile-2{width:50%}
-    .bloc-tile-2 .container{width:100%}
+    .bloc-group{
+      display:flex;
+      flex-wrap:wrap;
+    }
 
-    .l-bloc{color:rgba(0,0,0,.6)}
-    .l-bloc a{color:rgba(0,0,0,.75)}
-    .l-bloc a:hover{color:rgba(0,0,0,1)}
+    .bloc-tile-2{
+      width:50%;
+    }
 
-    .mg-md{margin-top:10px;margin-bottom:20px}
-    .voffset{margin-top:30px}
-    .link-style{font-family:Helvetica,Arial,sans-serif}
+    .bloc-tile-2 .container{
+      width:100%;
+    }
 
-    .text-center{text-align:center}
-    .text-left{text-align:left}
-
-    .img-fluid{max-width:100%;height:auto}
-    .mx-auto{margin-left:auto!important;margin-right:auto!important}
-    .d-block{display:block!important}
-    .align-self-center{align-self:center}
+    .l-bloc{color:rgba(0,0,0,.68)}
 
     .navbar{
       display:flex;
       align-items:center;
       justify-content:space-between;
       width:100%;
+      gap:16px;
       padding:0;
     }
+
     .navbar-brand{
       display:inline-block;
-      padding-top:.3125rem;
-      padding-bottom:.3125rem;
-      margin-right:1rem;
       font-size:1.25rem;
-      line-height:inherit;
+      font-weight:700;
       white-space:nowrap;
-      text-decoration:none;
       color:#111;
-      font-weight:600;
     }
+
     .site-navigation{
       list-style:none;
       display:flex;
+      gap:18px;
       margin:0;
       padding:0;
     }
-    .nav-item{margin-left:20px}
+
     .nav-link{
-      text-decoration:none;
       color:rgb(64,64,64);
       padding:10px 0;
       display:inline-block;
+    }
+
+    .text-center{text-align:center}
+    .text-md-left{text-align:left}
+    .mx-auto{margin-left:auto!important;margin-right:auto!important}
+    .d-block{display:block!important}
+    .align-self-center{align-self:center}
+    .mg-md{margin-top:10px;margin-bottom:20px}
+    .voffset{margin-top:30px}
+    .link-style{font-family:Helvetica,Arial,sans-serif}
+
+    .img-fluid{
+      max-width:100%;
+      height:auto;
+      display:block;
+    }
+
+    .hero-product-image{
+      width:100%;
+      max-width:420px;
+      height:auto;
+      margin-left:auto;
+      margin-right:auto;
+    }
+
+    .vendor-image{
+      width:100%;
+      max-width:220px;
+      height:auto;
+      margin-left:auto;
+      margin-right:auto;
     }
 
     .btn{
@@ -146,42 +193,35 @@
       text-decoration:none;
       border:none;
     }
+
     .btn-d{
       color:#FFF;
-      background:rgba(0,0,0,.3);
+      background:rgba(0,0,0,.35);
     }
 
     .scrollToTop{
-      width:40px;
-      height:40px;
+      width:42px;
+      height:42px;
       position:fixed;
-      bottom:20px;
-      right:20px;
+      bottom:18px;
+      right:18px;
       opacity:1;
       z-index:500;
       border-radius:4px;
-    }
-
-    .icon-md{
-      font-size:30px!important;
+      font-size:22px;
       line-height:1;
-      display:inline-block;
     }
 
-    .down-arrow,
-    .up-arrow{
+    .arrow{
       font-size:30px;
       line-height:1;
       display:inline-block;
       font-weight:700;
     }
 
-    .card-sq,.card-sq .card-header,.card-sq .card-footer{border-radius:0}
-    .card-rd{border-radius:30px}
-    .feature-col-mt{margin-top:29px}
-    .hero-first-col-mb{margin-bottom:30px}
-
-    .mt-1,.mt-md-0,.mt-md-4,.mt-lg-0{margin-top:0}
+    .vendor-card{
+      margin-bottom:8px;
+    }
 
     @media (min-width:576px){
       .col-sm-8{flex:0 0 66.666667%;max-width:66.666667%}
@@ -193,7 +233,6 @@
       .col-md-6{flex:0 0 50%;max-width:50%}
       .col-md-7{flex:0 0 58.333333%;max-width:58.333333%}
       .offset-md-0{margin-left:0}
-      .text-md-left{text-align:left!important}
       .order-md-0{order:0}
       .order-1{order:1}
       .mt-md-0{margin-top:0}
@@ -209,31 +248,91 @@
       .mt-lg-0{margin-top:0}
     }
 
-    @media (max-width:1024px){
-      .bloc{padding-left:20px;padding-right:20px}
-    }
-
     @media (max-width:991px){
-      .container{width:100%}
-      .page-container,#hero-bloc{overflow-x:hidden;position:relative}
-      .bloc-group,.bloc-group .bloc{display:block;width:100%}
+      .bloc-group,.bloc-group .bloc{
+        display:block;
+        width:100%;
+      }
     }
 
     @media (max-width:767px){
-      .page-container{overflow-x:hidden;position:relative}
-      .bloc{padding-left:15px;padding-right:15px}
-      .bloc-lg{padding:60px 20px}
-      .voffset{margin-top:10px}
+      .bloc{
+        padding-left:16px;
+        padding-right:16px;
+      }
+
+      .bloc-lg{
+        padding:40px 16px;
+      }
+
       .navbar{
         flex-direction:column;
         align-items:flex-start;
       }
+
       .site-navigation{
-        margin-top:10px;
+        gap:14px;
       }
-      .nav-item{
-        margin-left:0;
-        margin-right:16px;
+
+      .voffset{
+        margin-top:12px;
+      }
+
+      .hero-product-image{
+        max-width:260px;
+      }
+
+      .vendor-image{
+        max-width:180px;
+      }
+
+      h1{
+        font-size:1.75rem;
+      }
+
+      h3{
+        font-size:1.2rem;
+      }
+
+      h4{
+        font-size:1.05rem;
+      }
+
+      p{
+        font-size:.98rem;
+      }
+
+      .text-md-left{
+        text-align:center;
+      }
+
+      .scrollToTop{
+        width:38px;
+        height:38px;
+        bottom:14px;
+        right:14px;
+      }
+    }
+
+    @media (max-width:480px){
+      .bloc-lg{
+        padding:32px 14px;
+      }
+
+      .hero-product-image{
+        max-width:220px;
+      }
+
+      .vendor-image{
+        max-width:160px;
+      }
+
+      h1{
+        font-size:1.55rem;
+      }
+
+      p{
+        font-size:.95rem;
       }
     }
   </style>
@@ -248,7 +347,7 @@
             <nav class="navbar" role="navigation">
               <a class="navbar-brand link-style" href="index.html">Little River Compost</a>
               <ul class="site-navigation">
-                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="index.html" class="nav-link">Home</a></li>
               </ul>
             </nav>
           </div>
@@ -258,12 +357,14 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-5 col-sm-8 offset-sm-2 offset-md-0 col-md-5 order-md-0 order-1 offset-lg-0">
-            <img src="littlerivercompostbagfinalproof.png" class="img-fluid mx-auto d-block" alt="Little River Compost bag">
+            <img src="littlerivercompostbagfinalproof.png" class="img-fluid hero-product-image" alt="Little River Compost bag">
           </div>
           <div class="col-lg-6 align-self-center col-md-7 offset-lg-1">
             <h1 class="mg-md text-center text-md-left">About Little River Compost</h1>
             <h3 class="mg-md text-center text-md-left">Our Product</h3>
-            <p>Little River Premium Blend Compost is derived from a healthy mix of dairy and poultry manure, horse bedding, sawdust, lobster and fresh peat moss from Maine. These ingredients are combined throughly, shaped into rows and placed over an aeration system. The compost is then exposed to air and turned frequently. The decomposition process continues until temperatures rise to 140-160 degrees, destroying all undesirable bacteria and weed seeds. Once the lengthy curing period is over, the compost is blended with Maine peat moss and sized to a fine textured premium compost. Our Little River Premium Blend Compost is then ready to give your soil just what it needs: slow releasing nutrients and moisture holding capabilities. Cycle complete and quality assured, our compost is then packed and shipped. NOTE: To safeguard its purity, our compost does not contain leaves or yard materials.</p>
+            <p>Little River Premium Blend Compost is derived from a healthy mix of dairy and poultry manure, horse bedding, sawdust, lobster and fresh peat moss from Maine. These ingredients are combined throughly, shaped into rows and placed over an aeration system. The compost is then exposed to air and turned frequently. The decomposition process continues until temperatures rise to 140-160 degrees, destroying all undesirable bacteria and weed seeds.</p>
+            <p>Once the lengthy curing period is over, the compost is blended with Maine peat moss and sized to a fine textured premium compost. Our Little River Premium Blend Compost is then ready to give your soil just what it needs: slow releasing nutrients and moisture holding capabilities. Cycle complete and quality assured, our compost is then packed and shipped.</p>
+            <p><strong>Note:</strong> To safeguard its purity, our compost does not contain leaves or yard materials.</p>
           </div>
         </div>
       </div>
@@ -273,7 +374,7 @@
           <div class="col-12">
             <div class="text-center">
               <a href="#bloc-1" aria-label="Scroll to vendors">
-                <span class="down-arrow">↓</span>
+                <span class="arrow">↓</span>
               </a>
             </div>
           </div>
@@ -291,33 +392,33 @@
         </div>
 
         <div class="row voffset">
-          <div class="col-lg-3 col-md-6">
+          <div class="col-lg-3 col-md-6 vendor-card">
             <a href="https://www.moosecrossinggardencenter.com/" target="_blank" rel="noopener noreferrer">
-              <img src="44FB1C2B8118B873.png" class="img-fluid mx-auto d-block" alt="Moose Crossing">
+              <img src="44FB1C2B8118B873.png" class="img-fluid vendor-image" alt="Moose Crossing">
             </a>
             <h4 class="mg-md">Moose Crossing</h4>
             <p>3033 Atlantic Hwy, Waldoboro, ME 04572</p>
           </div>
 
-          <div class="col-lg-3 col-md-6 mt-1 mt-md-0">
+          <div class="col-lg-3 col-md-6 mt-1 mt-md-0 vendor-card">
             <a href="https://www.skillins.com/" target="_blank" rel="noopener noreferrer">
-              <img src="862EED9837F8D155.jpg" class="img-fluid mx-auto d-block" alt="Skillins">
+              <img src="862EED9837F8D155.jpg" class="img-fluid vendor-image" alt="Skillins">
             </a>
             <h4 class="mg-md">Skillins</h4>
             <p>422 Bath Road, Brunswick, ME 04011<br>89 Foreside Road, Falmouth, ME 04105<br>201 Gray Rd (Route 100), Cumberland, ME 04021</p>
           </div>
 
-          <div class="col-lg-3 col-md-6 mt-1 mt-md-4 mt-lg-0">
+          <div class="col-lg-3 col-md-6 mt-1 mt-md-4 mt-lg-0 vendor-card">
             <a href="http://www.seasonsdowneastdesigns.com/" target="_blank" rel="noopener noreferrer">
-              <img src="6803F3D21F278E8A.jpg" class="img-fluid mx-auto d-block" alt="Seasons">
+              <img src="6803F3D21F278E8A.jpg" class="img-fluid vendor-image" alt="Seasons">
             </a>
             <h4 class="mg-md">Seasons</h4>
             <p>62 MEADOW ROAD • ROCKPORT, ME 04856</p>
           </div>
 
-          <div class="col-lg-3 col-md-6 mt-1 mt-md-4 mt-lg-0">
+          <div class="col-lg-3 col-md-6 mt-1 mt-md-4 mt-lg-0 vendor-card">
             <a href="https://odonals.com/" target="_blank" rel="noopener noreferrer">
-              <img src="1B527471BC2A9A60.jpg" class="img-fluid mx-auto d-block" alt="O'Donal's">
+              <img src="1B527471BC2A9A60.jpg" class="img-fluid vendor-image" alt="O'Donal's">
             </a>
             <h4 class="mg-md">O&rsquo;Donal's</h4>
             <p>6 County Road<br>Gorham, ME 04038</p>
@@ -325,33 +426,33 @@
         </div>
 
         <div class="row voffset">
-          <div class="col-lg-3 col-md-6">
+          <div class="col-lg-3 col-md-6 vendor-card">
             <a href="https://roosevelttrailgardencenter.com/" target="_blank" rel="noopener noreferrer">
-              <img src="196A07A5D0FB9973.png" class="img-fluid mx-auto d-block" alt="Roosevelt Trail">
+              <img src="196A07A5D0FB9973.png" class="img-fluid vendor-image" alt="Roosevelt Trail">
             </a>
             <h4 class="mg-md">Rossevelt Trail</h4>
             <p>310 Roosevelt Trail in Windham, ME</p>
           </div>
 
-          <div class="col-lg-3 col-md-6 mt-1 mt-md-0">
+          <div class="col-lg-3 col-md-6 mt-1 mt-md-0 vendor-card">
             <a href="https://www.gardensdream.com/" target="_blank" rel="noopener noreferrer">
-              <img src="E71EE1609D82CE2A.png" class="img-fluid mx-auto d-block" alt="Garden's Dream">
+              <img src="E71EE1609D82CE2A.png" class="img-fluid vendor-image" alt="Garden's Dream">
             </a>
             <h4 class="mg-md">Garden&rsquo;s Dream</h4>
             <p>355 Taylor Road<br>Enfield, CT 06082<br><br>610 Main Street<br>Cromwell, CT 06416</p>
           </div>
 
-          <div class="col-lg-3 col-md-6 mt-1 mt-md-4 mt-lg-0">
+          <div class="col-lg-3 col-md-6 mt-1 mt-md-4 mt-lg-0 vendor-card">
             <a href="https://www.nchuntlumber.com/" target="_blank" rel="noopener noreferrer">
-              <img src="CD85CC4935E11BA0.jpg" class="img-fluid mx-auto d-block" alt="N.C. Hunt">
+              <img src="CD85CC4935E11BA0.jpg" class="img-fluid vendor-image" alt="N.C. Hunt">
             </a>
             <h4 class="mg-md">N.C. Hunt</h4>
             <p>200 S. Clary Road<br>Jefferson, ME 04348<br><br>200 S. Clary Road<br>Jefferson, ME 04348<br><br>237 US Route 1<br>Damariscotta, ME 04543</p>
           </div>
 
-          <div class="col-lg-3 col-md-6 mt-1 mt-md-4 mt-lg-0">
+          <div class="col-lg-3 col-md-6 mt-1 mt-md-4 mt-lg-0 vendor-card">
             <a href="https://www.mcsherrysnursery.com/" target="_blank" rel="noopener noreferrer">
-              <img src="5E5EF5560EB52B7D.jpg" class="img-fluid mx-auto d-block" alt="McSherry's">
+              <img src="5E5EF5560EB52B7D.jpg" class="img-fluid vendor-image" alt="McSherry's">
             </a>
             <h4 class="mg-md">McSherry's</h4>
             <p>2599 E MAIN ST<br>CENTER CONWAY, NH 03813</p>
@@ -370,33 +471,33 @@
         </div>
 
         <div class="row voffset">
-          <div class="col-lg-3 col-md-6">
+          <div class="col-lg-3 col-md-6 vendor-card">
             <a href="https://www.gardenspotfarm.com/" target="_blank" rel="noopener noreferrer">
-              <img src="3CFD918D909730F9.png" class="img-fluid mx-auto d-block" alt="Garden Spot Farm">
+              <img src="3CFD918D909730F9.png" class="img-fluid vendor-image" alt="Garden Spot Farm">
             </a>
             <h4 class="mg-md">Garden Spot Farm</h4>
             <p>896 Lawrence Road<br>N. Pownal, ME</p>
           </div>
 
-          <div class="col-lg-3 col-md-6 mt-1 mt-md-0">
+          <div class="col-lg-3 col-md-6 mt-1 mt-md-0 vendor-card">
             <a href="https://www.allensterlinglothrop.com/" target="_blank" rel="noopener noreferrer">
-              <img src="4DB9280F29028F87.jpg" class="img-fluid mx-auto d-block" alt="Allen, Sterling and Lothrop">
+              <img src="4DB9280F29028F87.jpg" class="img-fluid vendor-image" alt="Allen, Sterling and Lothrop">
             </a>
             <h4 class="mg-md">Allen, Sterling &amp; Lothrop</h4>
             <p>191 US ROUTE 1, FALMOUTH, MAINE, 04105</p>
           </div>
 
-          <div class="col-lg-3 col-md-6 mt-1 mt-md-4 mt-lg-0">
+          <div class="col-lg-3 col-md-6 mt-1 mt-md-4 mt-lg-0 vendor-card">
             <a href="https://gammonlandscapenursery.com/" target="_blank" rel="noopener noreferrer">
-              <img src="B1BBEEB946B99C13.jpg" class="img-fluid mx-auto d-block" alt="Gammon's">
+              <img src="B1BBEEB946B99C13.jpg" class="img-fluid vendor-image" alt="Gammon's">
             </a>
             <h4 class="mg-md">Gammon's</h4>
             <p>2810 Turner Road Auburn, Maine 04210</p>
           </div>
 
-          <div class="col-lg-3 col-md-6 mt-1 mt-md-4 mt-lg-0">
+          <div class="col-lg-3 col-md-6 mt-1 mt-md-4 mt-lg-0 vendor-card">
             <a href="https://www.facebook.com/GreenThumbMaine/" target="_blank" rel="noopener noreferrer">
-              <img src="7788E2EC07A01186.png" class="img-fluid mx-auto d-block" alt="Green Thumb">
+              <img src="7788E2EC07A01186.png" class="img-fluid vendor-image" alt="Green Thumb">
             </a>
             <h4 class="mg-md">Green Thumb</h4>
             <p>Route 17, 181 Rockland St.<br>West Rockport, Maine 04865</p>
@@ -404,33 +505,33 @@
         </div>
 
         <div class="row voffset">
-          <div class="col-lg-3 col-md-6">
+          <div class="col-lg-3 col-md-6 vendor-card">
             <a href="http://a2zgrowsupplies.com/" target="_blank" rel="noopener noreferrer">
-              <img src="61A360F4C83A4D5B.jpg" class="img-fluid mx-auto d-block" alt="A2Z">
+              <img src="61A360F4C83A4D5B.jpg" class="img-fluid vendor-image" alt="A2Z">
             </a>
             <h4 class="mg-md">A2Z</h4>
             <p>172 Pleasant St Brunswick ME 04011<br><br>306 Warren Ave Portland ME 04103</p>
           </div>
 
-          <div class="col-lg-3 col-md-6 mt-1 mt-md-0">
+          <div class="col-lg-3 col-md-6 mt-1 mt-md-0 vendor-card">
             <a href="https://brooksfeed.com/" target="_blank" rel="noopener noreferrer">
-              <img src="8F23EBC10D52E90E.jpg" class="img-fluid mx-auto d-block" alt="Brook's Feed and Farm">
+              <img src="8F23EBC10D52E90E.jpg" class="img-fluid vendor-image" alt="Brook's Feed and Farm">
             </a>
             <h4 class="mg-md">Brook&rsquo;s Feed &amp; Farm</h4>
             <p>86 Union Street<br>Brunswick, ME 04011 US</p>
           </div>
 
-          <div class="col-lg-3 col-md-6 mt-1 mt-md-4 mt-lg-0">
+          <div class="col-lg-3 col-md-6 mt-1 mt-md-4 mt-lg-0 vendor-card">
             <a href="http://www.bessiesfarmgoods.com/" target="_blank" rel="noopener noreferrer">
-              <img src="08BA6CF1E215A8E6.jpg" class="img-fluid mx-auto d-block" alt="Bessie's">
+              <img src="08BA6CF1E215A8E6.jpg" class="img-fluid vendor-image" alt="Bessie's">
             </a>
             <h4 class="mg-md">Bessie's</h4>
             <p>33 Litchfield Rd.<br>Freeport, ME<br>04032</p>
           </div>
 
-          <div class="col-lg-3 col-md-6 mt-1 mt-md-4 mt-lg-0">
+          <div class="col-lg-3 col-md-6 mt-1 mt-md-4 mt-lg-0 vendor-card">
             <a href="littlerivercompostbagfinalproof.png" target="_blank" rel="noopener noreferrer">
-              <img src="littlerivercompostbagfinalproof.png" class="img-fluid mx-auto d-block" alt="Little River Compost bag">
+              <img src="littlerivercompostbagfinalproof.png" class="img-fluid vendor-image" alt="Little River Compost bag">
             </a>
             <h4 class="mg-md">Little River Compost</h4>
             <p><br></p>
@@ -445,7 +546,8 @@
           <div class="row">
             <div class="col-12">
               <h1 class="mg-md">About Little River Compost</h1>
-              <p>Little River Compost is located on 100 acres of green pasture and wild woodland. A small family operation, we help local Maine farmers, foresters and fishermen manage their manure, wood chips, and fish by-products by recycling what would otherwise end up in Maine's landfills. By making our compost in a covered and controlled environment we keep our operation environmentally friendly. We take pride in the work we do at Little River, our compost coming full circle to enrich, protect, and sustain Maine land and our environment, now and in the future.</p>
+              <p>Little River Compost is located on 100 acres of green pasture and wild woodland. A small family operation, we help local Maine farmers, foresters and fishermen manage their manure, wood chips, and fish by-products by recycling what would otherwise end up in Maine's landfills.</p>
+              <p>By making our compost in a covered and controlled environment we keep our operation environmentally friendly. We take pride in the work we do at Little River, our compost coming full circle to enrich, protect, and sustain Maine land and our environment, now and in the future.</p>
             </div>
           </div>
         </div>
@@ -455,17 +557,22 @@
         <div class="container bloc-lg">
           <div class="row">
             <div class="col-12">
-              <p><br><br><br>Contact Information<br>Little River Compost<br>Phone: 207-353-9468<br>Fax: 207-353-3221<br><br>79 Edgecomb Rd.<br>P.O. Box 148<br>Lisbon Falls, Maine, United States<br>04252<br><br>E-mail: info@littlerivercompost.com</p>
+              <p><strong>Contact Information</strong><br>
+              Little River Compost<br>
+              Phone: 207-353-9468<br>
+              Fax: 207-353-3221<br><br>
+              79 Edgecomb Rd.<br>
+              P.O. Box 148<br>
+              Lisbon Falls, Maine, United States<br>
+              04252<br><br>
+              E-mail: info@littlerivercompost.com</p>
             </div>
           </div>
         </div>
       </div>
     </div>
 
-    <a class="bloc-button btn btn-d scrollToTop" href="#bloc-0" aria-label="Back to top">
-      <span class="up-arrow">↑</span>
-    </a>
-
+    <a class="btn btn-d scrollToTop" href="#bloc-0" aria-label="Back to top">↑</a>
   </div>
 </body>
 </html>
