@@ -5,121 +5,251 @@
   <meta name="keywords" content="">
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Little River Compost</title>
   <link rel="shortcut icon" type="image/png" href="favicon.png">
 
-  <link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css?1667">
-  <link rel="stylesheet" type="text/css" href="./css/animate.min.css?6771">
-  <link rel="stylesheet" type="text/css" href="./css/font-awesome.min.css">
-
-  <title>Home</title>
-
   <style>
-    body{margin:0;padding:0;background:#FFFFFF;overflow-x:hidden;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;}
-    .page-container{overflow-x:hidden;}
-    a,button{transition:background .3s ease-in-out;outline:none!important;}
-    a:hover{text-decoration:none;cursor:pointer;}
-    .bloc{width:100%;clear:both;background:50% 50% no-repeat;padding:0 50px;-webkit-background-size:cover;-moz-background-size:cover;-o-background-size:cover;background-size:cover;position:relative;display:flex;}
-    .bloc .container{padding-left:0;padding-right:0;}
-    .bloc-lg{padding:100px 50px;}
-    .bloc-fill-screen{min-height:100vh;display:flex;flex-direction:column;padding-top:20px;padding-bottom:20px;}
-    .bloc-fill-screen > .container{align-self:flex-middle;flex-grow:1;display:flex;}
-    .bloc-fill-screen > .container > .row{flex-grow:1;align-self:center;width:100%;}
-    .bloc-fill-screen .fill-bloc-top-edge, .bloc-fill-screen .fill-bloc-bottom-edge{flex-grow:0;}
-    .bloc-fill-screen .fill-bloc-top-edge{align-self:flex-start;}
-    .bloc-fill-screen .fill-bloc-bottom-edge{align-self:flex-end;}
-    .bloc-group{display:flex;}
-    .bloc-tile-2{width:50%;}
-    .bloc-tile-3{width:33.33333333%;}
-    .bloc-tile-4{width:25%;}
-    .bloc-tile-2 .container, .bloc-tile-3 .container, .bloc-tile-4 .container{width:100%;}
-    .d-bloc .card,.l-bloc{color:rgba(0,0,0,.5);}
-    .d-bloc .card button:hover,.l-bloc button:hover{color:rgba(0,0,0,.7);}
-    .l-bloc .icon-round,.l-bloc .icon-square,.l-bloc .icon-rounded,.l-bloc .icon-semi-rounded-a,.l-bloc .icon-semi-rounded-b{border-color:rgba(0,0,0,.7);}
-    .d-bloc .card .divider-h span,.l-bloc .divider-h span{border-color:rgba(0,0,0,.1);}
-    .d-bloc .card .a-btn,.l-bloc .a-btn,.l-bloc .navbar a,.l-bloc a .icon-sm, .l-bloc a .icon-md, .l-bloc a .icon-lg, .l-bloc a .icon-xl, .l-bloc h1 a, .l-bloc h2 a, .l-bloc h3 a, .l-bloc h4 a, .l-bloc h5 a, .l-bloc h6 a, .l-bloc p a{color:rgba(0,0,0,.6);}
-    .d-bloc .card .a-btn:hover,.l-bloc .a-btn:hover,.l-bloc .navbar a:hover, .l-bloc a:hover .icon-sm, .l-bloc a:hover .icon-md, .l-bloc a:hover .icon-lg, .l-bloc a:hover .icon-xl, .l-bloc h1 a:hover, .l-bloc h2 a:hover, .l-bloc h3 a:hover, .l-bloc h4 a:hover, .l-bloc h5 a:hover, .l-bloc h6 a:hover, .l-bloc p a:hover{color:rgba(0,0,0,1);}
-    .l-bloc .navbar-toggle .icon-bar{color:rgba(0,0,0,.6);}
-    .d-bloc .card .btn-wire,.d-bloc .card .btn-wire:hover,.l-bloc .btn-wire,.l-bloc .btn-wire:hover{color:rgba(0,0,0,.7);border-color:rgba(0,0,0,.3);}
-    .voffset{margin-top:30px;}
-    .hero .hero-nav{padding-left:inherit;padding-right:inherit;}
-    .navbar-light .navbar-nav .nav-link{color:rgb(64,64,64);}
-    .btco-menu li > a{padding:10px 15px;color:#000;}
-    .btco-menu .active a:focus,.btco-menu li a:focus,.navbar > .show > a:focus{background:transparent;outline:0;}
-    .dropdown-menu .show > .dropdown-toggle::after{transform:rotate(-90deg);}
-    .mg-md{margin-top:10px;margin-bottom:20px;}
-    .btn-d,.btn-d:hover,.btn-d:focus{color:#FFF;background:rgba(0,0,0,.3);}
-    button{outline:none!important;}
-    .icon-md{font-size:30px!important;}
-    .card-sq,.card-sq .card-header,.card-sq .card-footer{border-radius:0;}
-    .card-rd{border-radius:30px;}
-    .card-rd .card-header{border-radius:29px 29px 0 0;}
-    .card-rd .card-footer{border-radius:0 0 29px 29px;}
-    .scrollToTop{width:40px;height:40px;position:fixed;bottom:20px;right:20px;opacity:0;z-index:500;transition:all .3s ease-in-out;}
-    .scrollToTop span{margin-top:6px;}
-    .showScrollTop{font-size:14px;opacity:1;}
-    a[data-lightbox]{position:relative;display:block;text-align:center;}
-    a[data-lightbox]:hover::before{content:"+";font-family:"HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial;font-size:32px;line-height:42px;width:50px;height:50px;margin-left:-25px;border-radius:50%;background:rgba(0,0,0,.6);color:#FFF;font-weight:100;z-index:1;position:absolute;top:50%;left:50%;transform:translateY(-50%);-webkit-transform:translateY(-50%);}
-    a[data-lightbox]:hover img{opacity:.6;-webkit-animation-fill-mode:none;animation-fill-mode:none;}
-    .lightbox-caption{padding:20px;color:#FFF;background:rgba(0,0,0,.5);position:absolute;left:15px;right:15px;bottom:5px;}
-    .close-lightbox{color:#FFF;font-size:30px;position:absolute;top:20px;right:20px;z-index:20;background:rgba(0,0,0,.5);border:none;line-height:30px;padding:0 9px 5px;opacity:.3;border-radius:.25rem;}
-    .close-lightbox:hover,.next-lightbox:hover,.prev-lightbox:hover{opacity:1.0;color:#FFF;}
-    .next-lightbox,.prev-lightbox{font-size:20px;color:rgba(255,255,255,.9);background:rgba(0,0,0,.5);transition:all .2s ease-in-out;position:absolute;top:45%;z-index:1;opacity:.4;border-radius:.25rem;}
-    .next-lightbox{padding:6px 8px 1px 13px;right:25px;}
-    .prev-lightbox{padding:6px 13px 1px 10px;left:25px;}
-    h1,h2,h3,h4,h5,h6,p,label,.btn,a{font-family:"Helvetica";}
-    .container{max-width:1140px;}
-    .feature-col-mt{margin-top:29px;}
-    .hero-first-col-mb{margin-bottom:30px;}
-    .img-style{width:274px;border-radius:0px 0px 0px 0px;}
-    .h1-style{font-size:18px;}
-    .img-6dbc50e51f32a6-style{width:237px;}
-    .p-style{font-size:14px;}
-    .h2-style{font-size:24px;}
-    .img-1-style{height:320px;}
-    .link-style{font-family:"helvetica";}
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      padding:0;
+      background:#FFFFFF;
+      overflow-x:hidden;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      font-family:Helvetica,Arial,sans-serif;
+      color:rgba(0,0,0,.75);
+      line-height:1.5;
+    }
+    .page-container{overflow-x:hidden}
+    a,button{transition:background .3s ease-in-out;outline:none!important}
+    a:hover{text-decoration:none;cursor:pointer}
+
+    h1,h2,h3,h4,h5,h6,p,label,.btn,a{font-family:Helvetica,Arial,sans-serif}
+    h1,h2,h3,h4,h5,h6{margin-top:0;color:#111}
+    h1{font-size:2rem}
+    h3{font-size:1.4rem}
+    h4{font-size:1.1rem}
+    p{margin-top:0}
+
+    .container{
+      width:100%;
+      max-width:1140px;
+      margin:0 auto;
+      padding-left:15px;
+      padding-right:15px;
+    }
+
+    .row{
+      display:flex;
+      flex-wrap:wrap;
+      margin-left:-15px;
+      margin-right:-15px;
+    }
+
+    [class*="col-"]{
+      position:relative;
+      width:100%;
+      padding-left:15px;
+      padding-right:15px;
+    }
+
+    .col-12,.col{flex:0 0 100%;max-width:100%}
+    .col-lg-3,.col-lg-5,.col-lg-6,.col-md-5,.col-md-6,.col-md-7,.col-sm-8{flex:0 0 100%;max-width:100%}
+
+    .bloc{
+      width:100%;
+      clear:both;
+      background:50% 50% no-repeat;
+      padding:0 50px;
+      background-size:cover;
+      position:relative;
+      display:flex;
+    }
+    .bloc .container{padding-left:15px;padding-right:15px}
+    .bloc-lg{padding:100px 50px}
+    .bloc-fill-screen{
+      min-height:100vh;
+      display:flex;
+      flex-direction:column;
+      padding-top:20px;
+      padding-bottom:20px;
+    }
+    .bloc-fill-screen > .container{
+      flex-grow:1;
+      display:flex;
+      align-items:center;
+    }
+    .fill-bloc-top-edge,
+    .fill-bloc-bottom-edge{
+      flex-grow:0!important;
+      display:block!important;
+    }
+
+    .bloc-group{display:flex}
+    .bloc-tile-2{width:50%}
+    .bloc-tile-2 .container{width:100%}
+
+    .l-bloc{color:rgba(0,0,0,.6)}
+    .l-bloc a{color:rgba(0,0,0,.75)}
+    .l-bloc a:hover{color:rgba(0,0,0,1)}
+
+    .mg-md{margin-top:10px;margin-bottom:20px}
+    .voffset{margin-top:30px}
+    .link-style{font-family:Helvetica,Arial,sans-serif}
+
+    .text-center{text-align:center}
+    .text-left{text-align:left}
+
+    .img-fluid{max-width:100%;height:auto}
+    .mx-auto{margin-left:auto!important;margin-right:auto!important}
+    .d-block{display:block!important}
+    .align-self-center{align-self:center}
+
+    .navbar{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      width:100%;
+      padding:0;
+    }
+    .navbar-brand{
+      display:inline-block;
+      padding-top:.3125rem;
+      padding-bottom:.3125rem;
+      margin-right:1rem;
+      font-size:1.25rem;
+      line-height:inherit;
+      white-space:nowrap;
+      text-decoration:none;
+      color:#111;
+      font-weight:600;
+    }
+    .site-navigation{
+      list-style:none;
+      display:flex;
+      margin:0;
+      padding:0;
+    }
+    .nav-item{margin-left:20px}
+    .nav-link{
+      text-decoration:none;
+      color:rgb(64,64,64);
+      padding:10px 0;
+      display:inline-block;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      text-decoration:none;
+      border:none;
+    }
+    .btn-d{
+      color:#FFF;
+      background:rgba(0,0,0,.3);
+    }
+
+    .scrollToTop{
+      width:40px;
+      height:40px;
+      position:fixed;
+      bottom:20px;
+      right:20px;
+      opacity:1;
+      z-index:500;
+      border-radius:4px;
+    }
+
+    .icon-md{
+      font-size:30px!important;
+      line-height:1;
+      display:inline-block;
+    }
+
+    .down-arrow,
+    .up-arrow{
+      font-size:30px;
+      line-height:1;
+      display:inline-block;
+      font-weight:700;
+    }
+
+    .card-sq,.card-sq .card-header,.card-sq .card-footer{border-radius:0}
+    .card-rd{border-radius:30px}
+    .feature-col-mt{margin-top:29px}
+    .hero-first-col-mb{margin-bottom:30px}
+
+    .mt-1,.mt-md-0,.mt-md-4,.mt-lg-0{margin-top:0}
+
+    @media (min-width:576px){
+      .col-sm-8{flex:0 0 66.666667%;max-width:66.666667%}
+      .offset-sm-2{margin-left:16.666667%}
+    }
+
+    @media (min-width:768px){
+      .col-md-5{flex:0 0 41.666667%;max-width:41.666667%}
+      .col-md-6{flex:0 0 50%;max-width:50%}
+      .col-md-7{flex:0 0 58.333333%;max-width:58.333333%}
+      .offset-md-0{margin-left:0}
+      .text-md-left{text-align:left!important}
+      .order-md-0{order:0}
+      .order-1{order:1}
+      .mt-md-0{margin-top:0}
+      .mt-md-4{margin-top:1.5rem}
+    }
+
+    @media (min-width:992px){
+      .col-lg-3{flex:0 0 25%;max-width:25%}
+      .col-lg-5{flex:0 0 41.666667%;max-width:41.666667%}
+      .col-lg-6{flex:0 0 50%;max-width:50%}
+      .offset-lg-0{margin-left:0}
+      .offset-lg-1{margin-left:8.333333%}
+      .mt-lg-0{margin-top:0}
+    }
+
     @media (max-width:1024px){
-      .bloc{padding-left:20px;padding-right:20px;}
-      .bloc.full-width-bloc,.bloc-tile-2.full-width-bloc .container,.bloc-tile-3.full-width-bloc .container,.bloc-tile-4.full-width-bloc .container{padding-left:0;padding-right:0;}
+      .bloc{padding-left:20px;padding-right:20px}
     }
+
     @media (max-width:991px){
-      .container{width:100%;}
-      .page-container,#hero-bloc{overflow-x:hidden;position:relative;}
-      .bloc{padding-left:constant(safe-area-inset-left);padding-right:constant(safe-area-inset-right);}
-      .bloc-group,.bloc-group .bloc{display:block;width:100%;}
+      .container{width:100%}
+      .page-container,#hero-bloc{overflow-x:hidden;position:relative}
+      .bloc-group,.bloc-group .bloc{display:block;width:100%}
     }
+
     @media (max-width:767px){
-      .page-container{overflow-x:hidden;position:relative;}
-      .bloc-tile-2 .container,.bloc-tile-3 .container,.bloc-tile-4 .container{padding-left:0;padding-right:0;}
-      .a-block{padding:0 10px;}
-      .btn-dwn{display:none;}
-      .voffset{margin-top:5px;}
-      .voffset-md{margin-top:20px;}
-      .voffset-lg{margin-top:30px;}
-      form{padding:5px;}
-      .close-lightbox{display:inline-block;}
-      .blocsapp-device-iphone5{background-size:216px 425px;padding-top:60px;width:216px;height:425px;}
-      .blocsapp-device-iphone5 img{width:180px;height:320px;}
+      .page-container{overflow-x:hidden;position:relative}
+      .bloc{padding-left:15px;padding-right:15px}
+      .bloc-lg{padding:60px 20px}
+      .voffset{margin-top:10px}
+      .navbar{
+        flex-direction:column;
+        align-items:flex-start;
+      }
+      .site-navigation{
+        margin-top:10px;
+      }
+      .nav-item{
+        margin-left:0;
+        margin-right:16px;
+      }
     }
-    @media (max-width:991px){.mt-md-0{}.mt-md-4{}}
-    @media (max-width:575px){.mt-1{}}
   </style>
 </head>
 <body>
   <div class="page-container">
+
     <div class="bloc l-bloc bloc-fill-screen" id="bloc-0">
       <div class="container fill-bloc-top-edge">
         <div class="row">
           <div class="col-12">
-            <nav class="navbar navbar-light row navbar-expand-md" role="navigation">
+            <nav class="navbar" role="navigation">
               <a class="navbar-brand link-style" href="index.html">Little River Compost</a>
-              <button id="nav-toggle" type="button" class="ui-navbar-toggler navbar-toggler border-0 p-0 mr-md-0 ml-auto" data-toggle="collapse" data-target=".navbar-47721" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse navbar-47721">
-                <ul class="site-navigation nav navbar-nav ml-auto">
-                  <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
-                </ul>
-              </div>
+              <ul class="site-navigation">
+                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+              </ul>
             </nav>
           </div>
         </div>
@@ -128,11 +258,11 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-5 col-sm-8 offset-sm-2 offset-md-0 col-md-5 order-md-0 order-1 offset-lg-0">
-            <img src="littlerivercompostbagfinalproof.png" class="img-fluid mx-auto d-block" alt="littlerivercompostbagfinalproof">
+            <img src="littlerivercompostbagfinalproof.png" class="img-fluid mx-auto d-block" alt="Little River Compost bag">
           </div>
           <div class="col-lg-6 align-self-center col-md-7 offset-lg-1">
             <h1 class="mg-md text-center text-md-left">About Little River Compost</h1>
-            <h3 class="mg-md float-none text-center text-md-left">Our Product</h3>
+            <h3 class="mg-md text-center text-md-left">Our Product</h3>
             <p>Little River Premium Blend Compost is derived from a healthy mix of dairy and poultry manure, horse bedding, sawdust, lobster and fresh peat moss from Maine. These ingredients are combined throughly, shaped into rows and placed over an aeration system. The compost is then exposed to air and turned frequently. The decomposition process continues until temperatures rise to 140-160 degrees, destroying all undesirable bacteria and weed seeds. Once the lengthy curing period is over, the compost is blended with Maine peat moss and sized to a fine textured premium compost. Our Little River Premium Blend Compost is then ready to give your soil just what it needs: slow releasing nutrients and moisture holding capabilities. Cycle complete and quality assured, our compost is then packed and shipped. NOTE: To safeguard its purity, our compost does not contain leaves or yard materials.</p>
           </div>
         </div>
@@ -142,8 +272,8 @@
         <div class="row">
           <div class="col-12">
             <div class="text-center">
-              <a href="#" data-scroll-speed="1000" onclick="scrollToTarget('0',this)">
-                <span class="fa fa-angle-down icon-md animated bounce animDelay08"></span>
+              <a href="#bloc-1" aria-label="Scroll to vendors">
+                <span class="down-arrow">↓</span>
               </a>
             </div>
           </div>
@@ -162,32 +292,32 @@
 
         <div class="row voffset">
           <div class="col-lg-3 col-md-6">
-            <a href="https://www.moosecrossinggardencenter.com/" target="_blank">
-              <img src="44FB1C2B8118B873.png" class="img-fluid mx-auto d-block" alt="44FB1C2B8118B873">
+            <a href="https://www.moosecrossinggardencenter.com/" target="_blank" rel="noopener noreferrer">
+              <img src="44FB1C2B8118B873.png" class="img-fluid mx-auto d-block" alt="Moose Crossing">
             </a>
             <h4 class="mg-md">Moose Crossing</h4>
             <p>3033 Atlantic Hwy, Waldoboro, ME 04572</p>
           </div>
 
           <div class="col-lg-3 col-md-6 mt-1 mt-md-0">
-            <a href="https://www.skillins.com/" target="_blank">
-              <img src="862EED9837F8D155.jpg" class="img-fluid mx-auto d-block" alt="862EED9837F8D155">
+            <a href="https://www.skillins.com/" target="_blank" rel="noopener noreferrer">
+              <img src="862EED9837F8D155.jpg" class="img-fluid mx-auto d-block" alt="Skillins">
             </a>
             <h4 class="mg-md">Skillins</h4>
             <p>422 Bath Road, Brunswick, ME 04011<br>89 Foreside Road, Falmouth, ME 04105<br>201 Gray Rd (Route 100), Cumberland, ME 04021</p>
           </div>
 
           <div class="col-lg-3 col-md-6 mt-1 mt-md-4 mt-lg-0">
-            <a href="http://www.seasonsdowneastdesigns.com/" target="_blank">
-              <img src="6803F3D21F278E8A.jpg" class="img-fluid mx-auto d-block" alt="6803F3D21F278E8A">
+            <a href="http://www.seasonsdowneastdesigns.com/" target="_blank" rel="noopener noreferrer">
+              <img src="6803F3D21F278E8A.jpg" class="img-fluid mx-auto d-block" alt="Seasons">
             </a>
             <h4 class="mg-md">Seasons</h4>
             <p>62 MEADOW ROAD • ROCKPORT, ME 04856</p>
           </div>
 
           <div class="col-lg-3 col-md-6 mt-1 mt-md-4 mt-lg-0">
-            <a href="https://odonals.com/" target="_blank">
-              <img src="1B527471BC2A9A60.jpg" class="img-fluid mx-auto d-block" alt="1B527471BC2A9A60">
+            <a href="https://odonals.com/" target="_blank" rel="noopener noreferrer">
+              <img src="1B527471BC2A9A60.jpg" class="img-fluid mx-auto d-block" alt="O'Donal's">
             </a>
             <h4 class="mg-md">O&rsquo;Donal's</h4>
             <p>6 County Road<br>Gorham, ME 04038</p>
@@ -196,32 +326,32 @@
 
         <div class="row voffset">
           <div class="col-lg-3 col-md-6">
-            <a href="https://roosevelttrailgardencenter.com/" target="_blank">
-              <img src="196A07A5D0FB9973.png" class="img-fluid mx-auto d-block" alt="196A07A5D0FB9973">
+            <a href="https://roosevelttrailgardencenter.com/" target="_blank" rel="noopener noreferrer">
+              <img src="196A07A5D0FB9973.png" class="img-fluid mx-auto d-block" alt="Roosevelt Trail">
             </a>
             <h4 class="mg-md">Rossevelt Trail</h4>
             <p>310 Roosevelt Trail in Windham, ME</p>
           </div>
 
           <div class="col-lg-3 col-md-6 mt-1 mt-md-0">
-            <a href="https://www.gardensdream.com/" target="_blank">
-              <img src="E71EE1609D82CE2A.png" class="img-fluid mx-auto d-block" alt="E71EE1609D82CE2A">
+            <a href="https://www.gardensdream.com/" target="_blank" rel="noopener noreferrer">
+              <img src="E71EE1609D82CE2A.png" class="img-fluid mx-auto d-block" alt="Garden's Dream">
             </a>
             <h4 class="mg-md">Garden&rsquo;s Dream</h4>
             <p>355 Taylor Road<br>Enfield, CT 06082<br><br>610 Main Street<br>Cromwell, CT 06416</p>
           </div>
 
           <div class="col-lg-3 col-md-6 mt-1 mt-md-4 mt-lg-0">
-            <a href="https://www.nchuntlumber.com/" target="_blank">
-              <img src="CD85CC4935E11BA0.jpg" class="img-fluid mx-auto d-block" alt="CD85CC4935E11BA0">
+            <a href="https://www.nchuntlumber.com/" target="_blank" rel="noopener noreferrer">
+              <img src="CD85CC4935E11BA0.jpg" class="img-fluid mx-auto d-block" alt="N.C. Hunt">
             </a>
             <h4 class="mg-md">N.C. Hunt</h4>
             <p>200 S. Clary Road<br>Jefferson, ME 04348<br><br>200 S. Clary Road<br>Jefferson, ME 04348<br><br>237 US Route 1<br>Damariscotta, ME 04543</p>
           </div>
 
           <div class="col-lg-3 col-md-6 mt-1 mt-md-4 mt-lg-0">
-            <a href="https://www.mcsherrysnursery.com/" target="_blank">
-              <img src="5E5EF5560EB52B7D.jpg" class="img-fluid mx-auto d-block" alt="5E5EF5560EB52B7D">
+            <a href="https://www.mcsherrysnursery.com/" target="_blank" rel="noopener noreferrer">
+              <img src="5E5EF5560EB52B7D.jpg" class="img-fluid mx-auto d-block" alt="McSherry's">
             </a>
             <h4 class="mg-md">McSherry's</h4>
             <p>2599 E MAIN ST<br>CENTER CONWAY, NH 03813</p>
@@ -241,32 +371,32 @@
 
         <div class="row voffset">
           <div class="col-lg-3 col-md-6">
-            <a href="https://www.gardenspotfarm.com/" target="_blank">
-              <img src="3CFD918D909730F9.png" class="img-fluid mx-auto d-block" alt="3CFD918D909730F9">
+            <a href="https://www.gardenspotfarm.com/" target="_blank" rel="noopener noreferrer">
+              <img src="3CFD918D909730F9.png" class="img-fluid mx-auto d-block" alt="Garden Spot Farm">
             </a>
             <h4 class="mg-md">Garden Spot Farm</h4>
             <p>896 Lawrence Road<br>N. Pownal, ME</p>
           </div>
 
           <div class="col-lg-3 col-md-6 mt-1 mt-md-0">
-            <a href="https://www.allensterlinglothrop.com/" target="_blank">
-              <img src="4DB9280F29028F87.jpg" class="img-fluid mx-auto d-block" alt="4DB9280F29028F87">
+            <a href="https://www.allensterlinglothrop.com/" target="_blank" rel="noopener noreferrer">
+              <img src="4DB9280F29028F87.jpg" class="img-fluid mx-auto d-block" alt="Allen, Sterling and Lothrop">
             </a>
             <h4 class="mg-md">Allen, Sterling &amp; Lothrop</h4>
             <p>191 US ROUTE 1, FALMOUTH, MAINE, 04105</p>
           </div>
 
           <div class="col-lg-3 col-md-6 mt-1 mt-md-4 mt-lg-0">
-            <a href="https://gammonlandscapenursery.com/" target="_blank">
-              <img src="B1BBEEB946B99C13.jpg" class="img-fluid mx-auto d-block" alt="B1BBEEB946B99C13">
+            <a href="https://gammonlandscapenursery.com/" target="_blank" rel="noopener noreferrer">
+              <img src="B1BBEEB946B99C13.jpg" class="img-fluid mx-auto d-block" alt="Gammon's">
             </a>
             <h4 class="mg-md">Gammon's</h4>
             <p>2810 Turner Road Auburn, Maine 04210</p>
           </div>
 
           <div class="col-lg-3 col-md-6 mt-1 mt-md-4 mt-lg-0">
-            <a href="https://www.facebook.com/GreenThumbMaine/" target="_blank">
-              <img src="7788E2EC07A01186.png" class="img-fluid mx-auto d-block" alt="7788E2EC07A01186">
+            <a href="https://www.facebook.com/GreenThumbMaine/" target="_blank" rel="noopener noreferrer">
+              <img src="7788E2EC07A01186.png" class="img-fluid mx-auto d-block" alt="Green Thumb">
             </a>
             <h4 class="mg-md">Green Thumb</h4>
             <p>Route 17, 181 Rockland St.<br>West Rockport, Maine 04865</p>
@@ -275,32 +405,32 @@
 
         <div class="row voffset">
           <div class="col-lg-3 col-md-6">
-            <a href="http://a2zgrowsupplies.com/" target="_blank">
-              <img src="61A360F4C83A4D5B.jpg" class="img-fluid mx-auto d-block" alt="61A360F4C83A4D5B">
+            <a href="http://a2zgrowsupplies.com/" target="_blank" rel="noopener noreferrer">
+              <img src="61A360F4C83A4D5B.jpg" class="img-fluid mx-auto d-block" alt="A2Z">
             </a>
             <h4 class="mg-md">A2Z</h4>
             <p>172 Pleasant St Brunswick ME 04011<br><br>306 Warren Ave Portland ME 04103</p>
           </div>
 
           <div class="col-lg-3 col-md-6 mt-1 mt-md-0">
-            <a href="https://brooksfeed.com/" target="_blank">
-              <img src="8F23EBC10D52E90E.jpg" class="img-fluid mx-auto d-block" alt="8F23EBC10D52E90E">
+            <a href="https://brooksfeed.com/" target="_blank" rel="noopener noreferrer">
+              <img src="8F23EBC10D52E90E.jpg" class="img-fluid mx-auto d-block" alt="Brook's Feed and Farm">
             </a>
             <h4 class="mg-md">Brook&rsquo;s Feed &amp; Farm</h4>
             <p>86 Union Street<br>Brunswick, ME 04011 US</p>
           </div>
 
           <div class="col-lg-3 col-md-6 mt-1 mt-md-4 mt-lg-0">
-            <a href="http://www.bessiesfarmgoods.com/" target="_blank">
-              <img src="08BA6CF1E215A8E6.jpg" class="img-fluid mx-auto d-block" alt="08BA6CF1E215A8E6">
+            <a href="http://www.bessiesfarmgoods.com/" target="_blank" rel="noopener noreferrer">
+              <img src="08BA6CF1E215A8E6.jpg" class="img-fluid mx-auto d-block" alt="Bessie's">
             </a>
             <h4 class="mg-md">Bessie's</h4>
             <p>33 Litchfield Rd.<br>Freeport, ME<br>04032</p>
           </div>
 
           <div class="col-lg-3 col-md-6 mt-1 mt-md-4 mt-lg-0">
-            <a href="#" data-lightbox="littlerivercompostbagfinalproof.png" data-gallery-id="gallery-1">
-              <img src="littlerivercompostbagfinalproof.png" class="img-fluid mx-auto d-block" alt="littlerivercompostbagfinalproof">
+            <a href="littlerivercompostbagfinalproof.png" target="_blank" rel="noopener noreferrer">
+              <img src="littlerivercompostbagfinalproof.png" class="img-fluid mx-auto d-block" alt="Little River Compost bag">
             </a>
             <h4 class="mg-md">Little River Compost</h4>
             <p><br></p>
@@ -310,7 +440,7 @@
     </div>
 
     <div class="bloc-group">
-      <div class="bloc l-bloc none bloc-tile-2" id="bloc-3">
+      <div class="bloc l-bloc bloc-tile-2" id="bloc-3">
         <div class="container bloc-lg">
           <div class="row">
             <div class="col-12">
@@ -321,7 +451,7 @@
         </div>
       </div>
 
-      <div class="bloc l-bloc none bloc-tile-2" id="bloc-4">
+      <div class="bloc l-bloc bloc-tile-2" id="bloc-4">
         <div class="container bloc-lg">
           <div class="row">
             <div class="col-12">
@@ -332,13 +462,10 @@
       </div>
     </div>
 
-    <a class="bloc-button btn btn-d scrollToTop" onclick="scrollToTarget('1',this)">
-      <span class="fa fa-chevron-up"></span>
+    <a class="bloc-button btn btn-d scrollToTop" href="#bloc-0" aria-label="Back to top">
+      <span class="up-arrow">↑</span>
     </a>
-  </div>
 
-  <script src="./js/jquery-3.3.1.min.js?3876"></script>
-  <script src="./js/bootstrap.bundle.min.js?6576"></script>
-  <script src="./js/blocs.min.js?5631"></script>
+  </div>
 </body>
 </html>
